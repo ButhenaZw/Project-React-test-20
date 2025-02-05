@@ -1,0 +1,107 @@
+#contact {
+  padding: 25px;
+  max-width: 400px;
+  margin: 30px auto;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+  font-family: 'Arial', sans-serif;
+  border: 1px solid #e0e0e0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#contact:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.h2l {
+  text-align: center;
+  color: #2c3e50;
+  font-size: 1.6em;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.formo {
+  display: flex;
+  flex-direction: column;
+}
+
+.labelo {
+  margin-bottom: 8px;
+  color: #555;
+  font-size: 1em;
+  font-weight: 500;
+}
+
+.inputo, textarea {
+  margin-bottom: 20px;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  background-color: #f9f9f9;
+}
+
+.inputo:focus, textarea:focus {
+  border-color: #ff9800;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+  outline: none;
+  background-color: #fff;
+}
+
+.buttono {
+  padding: 14px;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.buttono:hover {
+  background-color: #c37603;
+  transform: scale(1.05);
+  box-shadow: 0px 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.buttono:active {
+  background-color: #004085;
+  transform: scale(0.98);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+#contact input, #contact textarea {
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  #contact {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .h2l{
+    font-size: 1.4em;
+  }
+
+ .inputo, textarea {
+    font-size: 0.95em;
+    padding: 12px;
+  }
+
+  .buttono{
+    font-size: 1em;
+    padding: 12px;
+  }
+}

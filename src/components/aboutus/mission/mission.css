@@ -1,0 +1,47 @@
+.our-mission {
+    padding: 20px;
+    position: relative;
+    top: 70px;
+    text-align: left;
+    direction: ltr;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+  }
+  
+
+  
+  .our-mission p {
+    color: #444;
+    margin-bottom: 15px;
+    font-size: 16px;
+  }
+  
+  .mission-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    font-weight: 500;
+    transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    text-align: left;
+    direction: ltr;
+  }
+  
+  .mission-item:hover {
+    background-color: #e3f2fd;
+    transform: scale(1.02);
+    cursor: pointer;
+  }
+  
+  /* إخفاء شريط التمرير مع الحفاظ على التمرير */
+  .our-mission .ReactWindowList::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+  
+  .our-mission .ReactWindowList {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }

@@ -1,0 +1,30 @@
+.cards {
+    background-color: white;
+    width: 400px;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .cards:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(22, 9, 200, 0.2);
+  }
+  .headers{
+    width: 100%;
+    background-color: #f9b200;
+    height: 3px;
+    position: relative;
+    top: 10px;
+  }
+  .headers1{
+    width: 50%;
+    background-color: #f9b200;
+    height: 3px;
+  }
+  .header-text:hover{
+    color: #ffdd87;
+    transform: scale(1.02);
+    transition: 0.3s ease-in-out;
+  }

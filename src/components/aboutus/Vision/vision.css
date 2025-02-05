@@ -1,0 +1,34 @@
+.body-vision {
+    /* background-color: #f17d09; */
+    font-family: "Arial", sans-serif;
+    text-align: center;
+    padding: 40px;
+  }
+
+  .container-vision {
+    max-width: 800px;
+    margin: auto;
+    position: relative;
+    top:29px;
+    background: rgba(255, 255, 255, 0.1); 
+       background-color: #f9b200;
+
+
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .title-vision {
+    color: rgb(255, 255, 255);
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+
+  .text-vision {
+    color: white;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    line-height: 1.5;
+  }

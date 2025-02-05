@@ -1,0 +1,62 @@
+
+
+.bodys {
+  height: 100vh;
+  background-image: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width:50rem;
+  height: 30rem;
+  box-shadow: 0.9px 0.6px 5px 2px rgb(255, 136, 0);
+}
+
+.card-image {
+  background-image: url('https://i.imgur.com/scOrC6g.png');
+  background-position: center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+
+.forms {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputs {
+  padding: 10px 10px;
+  margin: 5px;
+  width: 20rem;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #ccc;
+  outline: none;
+}
+
+.error {
+  font-family: sans-serif;
+  color: red;
+  font-size: 10px;
+}
+
+.submit-btn {
+  width: 80%;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: transparent;
+  background: rgb(247, 165, 3);
+  cursor: pointer;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+}
