@@ -17,6 +17,7 @@
   min-height: 80vh;
   color: #575757;
   display: flex;
+  gap:50px;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -37,7 +38,7 @@
 }
 
 .cta-button {
-  background-color: #f9b200;
+  background-color: #ff7900;
   color: white;
   font-size: 1rem;
   padding: 15px 30px;

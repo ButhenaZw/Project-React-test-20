@@ -10,7 +10,7 @@ const Activity = () => {
       <div
         style={{
           width: "100%",
-          backgroundColor: "#f9b200",
+          backgroundColor: "#ff7900",
           height: "3px",
           position: "relative",
           bottom: "45px",

@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom"; 
 import { motion } from "framer-motion";
-import "./Contact.css";
-import Navbar from "../nav/nav";
+import "./home.css";
+import Nav from './navbar'
+import Services from '../ProjectReacta/services/services'
+import Activity from '../ProjectReacta/ac/Activty'
 import { useTranslation } from "react-i18next";
+import Footer from '../contactus/Home/footer/footer'
 
 export const Button = ({ children, className, ...props }) => (
   <button className={`px-4 py-2 rounded-lg text-white font-bold ${className}`} {...props}>
@@ -22,9 +25,8 @@ const Homepage = () => {
 
   return (
     <div className="bodya">
-    <Navbar style={{width:"100%"}} />
+        <Nav/>
       <div className="homepage">
-  
         <div style={{ backgroundColor: "#ff7900", height: "2px", width: "100%" }}></div>
 
         <section className="hero-section">
@@ -39,9 +41,7 @@ const Homepage = () => {
 
             <h1 className="hero-title">{t("heroTitle")}</h1>
             <h4 className="hero-text">{t("heroText")}</h4>
-            <Link to="/signup">
-              <Button className="cta-button">{t("getStarted")}</Button>
-            </Link>
+            
 
           </div>
         </section>
@@ -58,6 +58,9 @@ const Homepage = () => {
           </Card>
         </motion.section>
       </div>
+      <Activity/>
+      <Services/>
+      <Footer/>
     </div>
   );
 };

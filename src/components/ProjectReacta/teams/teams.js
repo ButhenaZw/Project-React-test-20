@@ -47,7 +47,7 @@ const Teams = () => {
             <div className="team-member">
               <img src="https://i.imgur.com/zoZ09yX.jpeg" alt="John Doe" className="member-photo" />
               <h3>Buthena Abdullah</h3>
-              <p className="role">Web Developer</p>
+              <p className="role">Scrum Master</p>
               <p className="bio">
                 John is an experienced developer with a passion for creating beautiful
                 websites.
@@ -64,7 +64,7 @@ const Teams = () => {
             <div className="team-member">
               <img src="https://i.imgur.com/ZXqmRmM.jpeg" alt="John Doe" className="member-photo" />
               <h3>Tamara</h3>
-              <p className="role">Web Developer</p>
+              <p className="role">Product Owner</p>
               <p className="bio">
                 John is an experienced developer with a passion for creating beautiful
                 websites.

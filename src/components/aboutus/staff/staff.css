@@ -1,6 +1,6 @@
 .headers{
-    width: 100%;
-    background-color: #f9b200;
+    width: 90%;
+    background-color: #ff7900;
     height: 3px;
     position: relative;
     top: 10px;
@@ -11,7 +11,7 @@
     height: 3px;
   }
   .header-text:hover{
-    color: #ffdd87;
+    color: #ff7900;
     transform: scale(1.02);
     transition: 0.3s ease-in-out;
   }

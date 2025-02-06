@@ -11,20 +11,20 @@
     transform: translateY(-5px);
     box-shadow: 0 8px 16px rgba(22, 9, 200, 0.2);
   }
-  .headers{
-    width: 100%;
-    background-color: #f9b200;
+  .headers3{
+    background-color: #ff7900;
     height: 3px;
     position: relative;
-    top: 10px;
+  
+    left:40px
   }
   .headers1{
     width: 50%;
-    background-color: #f9b200;
+    background-color: #ff7900;
     height: 3px;
   }
-  .header-text:hover{
-    color: #ffdd87;
+  .headerl-text:hover{
+    color: #ff7900;
     transform: scale(1.02);
     transition: 0.3s ease-in-out;
   }

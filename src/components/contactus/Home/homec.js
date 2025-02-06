@@ -2,10 +2,8 @@ import React from 'react'
 import Nav from "../../ProjectReacta/nav/nav"
 import './homec.css'
 // import { relative } from 'path'
-import InstagramIcon from '@mui/icons-material/Instagram';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import GitHubIcon from '@mui/icons-material/GitHub';
-import TwitterIcon from '@mui/icons-material/Twitter';
+import Footer from './footer/footer'
+
 
 
 function homec() {
@@ -60,30 +58,8 @@ function homec() {
         </div>
       </div>
 <div>
-<footer className='footer-contact'>
-<h1 style={{display:"flex" , justifyContent:"center"}}>Follow Us</h1>
 
-<div  className='icon-contact'  >
-    
-<a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-      <InstagramIcon style={{ fontSize: 40, color: '#E4405F' }} />
-    </a>
-
-    <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-      <FacebookIcon style={{ fontSize: 40, color: '#1877F2' }} />
-    </a>
-
-    <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-      <GitHubIcon style={{ fontSize: 40, color: '#181717' }} />
-    </a>
-
-    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-      <TwitterIcon style={{ fontSize: 40, color: '#1DA1F2' }} />
-    </a>
-
-
-</div>
-</footer>
+<Footer/>
 </div>
 
 

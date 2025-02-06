@@ -4,7 +4,8 @@ import Vision2 from "./Vision/vision2"
 import Mission from "./mission/mission"
 import Hero from './Hero/hero'
 import Partner from './partner/partner'
-import Staff from './staff/staff'
+import Staff from '../ProjectReacta/teams/teams'
+import Footer from '../contactus/Home/footer/footer'
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
 <Staff/>
 
 <Partner/>
+<Footer/>
 
 
 

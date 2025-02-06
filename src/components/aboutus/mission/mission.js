@@ -18,7 +18,7 @@ const OurMission = () => {
     <div className="our-mission">
       <img
         style={{ width: "170px", position: "relative", bottom: "30px", left: "180px" }}
-        src="https://media.discordapp.net/attachments/1331191768959418478/1335554146866036786/Screenshot_2-2-2025_131447_www.vecteezy.com.jpeg?ex=67a0973a&is=679f45ba&hm=c8293f178be37538b233e8c110ad1bfdef24570a0ac426436682649213e5ab7d&=&format=webp&width=331&height=301"
+        src="https://i.imgur.com/JYdXVQ1.jpeg"
         alt="Mission"
       />
 

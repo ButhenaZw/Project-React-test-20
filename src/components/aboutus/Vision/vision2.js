@@ -23,7 +23,7 @@ function Vision2() {
           left: '90px'
           
         }}
-        src="https://media.discordapp.net/attachments/1331191768959418478/1335554147105378374/Screenshot_2-2-2025_131442_www.vecteezy.com.jpeg?ex=67a0973a&is=679f45ba&hm=52f79efdbd627a5e4c4c53596d04fcdfc872e393f9d5ed2f2d2d288693dbb7a2&=&format=webp&width=374&height=312"
+        src="https://i.imgur.com/JfGBanH.jpeg"
         alt="Vision"
       />
       <h1

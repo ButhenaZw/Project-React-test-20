@@ -84,7 +84,7 @@ const Hero = () => {
             style={{
               fontSize: '16px',
               color: 'white',
-              backgroundColor: 'orange',
+              backgroundColor: '#ff7900',
               border: 'none',
               height:"26px",
               position:"relative",
