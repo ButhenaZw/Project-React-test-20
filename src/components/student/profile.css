@@ -61,9 +61,7 @@
     font-weight: bold !important;
 }
 
-html:not(.dark-style) .cd-account-settings-links .list-group-item.active {
-    background: transparent !important;
-}
+
 
 .cd-account-settings-multiselect~.select2-container {
     width: 100% !important;

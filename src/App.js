@@ -11,7 +11,8 @@ import Contactus from "./components/contactus/Home/homec"
 import HomeS from "./components/student/home"
 import ProfileS from "./components/student/profileS"
 import Footer from './components/contactus/Home/footer/footer'
-import ProfileT from './components/teacher/profileT'
+import ProfileT from './components/dashboard/profiles'
+import PPro from './components/student/pro'
 
 
 
@@ -27,6 +28,8 @@ function App() {
         <Route path="/home" element={<HomeS />} />
         <Route path="/profile" element={<ProfileS />} />
         <Route path="/profileT" element={<ProfileT />} />
+        <Route path="/pro" element={<PPro />} />
+
 
 
 

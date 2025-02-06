@@ -10,7 +10,8 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
     <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive": ""}>
         <div className='sidebar-title'>
             <div className='sidebar-brand'>
-                <p className='icons_header'/> Orange Coding School
+                <h1 style={{color:"white",fontFamily:"initial",fontSize:"30px"}} >Dashboard</h1>
+
             </div>
             <span className='icon close_icon' onClick={OpenSidebar}>X</span>
         </div>
@@ -18,32 +19,7 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
         <ul className='sidebar-list'>
             <li className='sidebar-list-item'>
                 <a href="">
-                    <BsGrid1X2Fill className='icons-dashboard'/> Dashboard
-                </a>
-            </li>
-            <li className='sidebar-list-item'>
-                <Link to="/profile"><a href="">
-                    <BsFillArchiveFill className='icons-dashboard'/> Products
-                </a></Link>
-            </li>
-            <li className='sidebar-list-item'>
-                <a href="">
-                    <BsFillGrid3X3GapFill className='icons-dashboard'/> Categories
-                </a>
-            </li>
-            <li className='sidebar-list-item'>
-                <a href="">
-                    <BsPeopleFill className='icons-dashboard'/> Customers
-                </a>
-            </li>
-            <li className='sidebar-list-item'>
-                <a href="">
-                    <BsListCheck className='icons-dashboard'/> Inventory
-                </a>
-            </li>
-            <li className='sidebar-list-item'>
-                <a href="">
-                    <BsMenuButtonWideFill className='icons-dashboard'/> Reports
+                    <BsMenuButtonWideFill className='icons-dashboard'/> Add Student
                 </a>
             </li>
             <li className='sidebar-list-item'>

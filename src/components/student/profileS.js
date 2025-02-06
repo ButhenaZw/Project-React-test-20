@@ -38,7 +38,7 @@ function ProfileS() {
       const imageUrl = URL.createObjectURL(file);
       setProfile((prevProfile) => {
         const updatedProfile = { ...prevProfile, profileImage: imageUrl };
-        localStorage.setItem("studentProfile", JSON.stringify(updatedProfile)); // Save to local storage
+        localStorage.setItem("studentProfile", JSON.stringify(updatedProfile)); 
         return updatedProfile;
       });
     }
@@ -54,21 +54,21 @@ function ProfileS() {
   };
 
   return (
-    <div className="container light-style flex-grow-1 container-p-y">
-      <h4 className="font-weight-bold py-3 mb-4">Account Settings</h4>
+    <div className="container light-style flex-grow-1 container-p-y" style={{position:"relative",top:"100px"}}>
+      <h1 style={{fontWeight:"bold" ,position:"relative",bottom:"70px",color:""}}>Account Settings</h1>
       <div className="cd-card overflow-hidden">
         <div className="row no-gutters cd-row-bordered row-border-light">
           <div className="col-md-3 pt-0">
             <div className="list-group list-group-flush cd-account-settings-links">
-              <a className="list-group-item list-group-item-action active" href="#account-general">
-                General
-              </a>
+
             </div>
           </div>
           <div className="col-md-9">
-            <div className="tab-content">
+            <div className="tab-content" style={{position:"relative",top:"10px"}}>
               <div className="tab-pane fade active show" id="account-general">
                 <div className="cd-card-body media align-items-center">
+                  <div style={{position:"flex"}}>
+                  <div> 
                   <img src={profile.profileImage} alt="Profile" className="d-block cd-ui-w-80" />
                   <div className="media-body ml-4">
                     <label className="cd-btn cd-btn-outline-primary">
@@ -76,6 +76,8 @@ function ProfileS() {
                       <input type="file" className="cd-account-settings-fileinput" onChange={handleImageUpload} />
                     </label>
                   </div>
+                  </div>
+
                 </div>
                 <hr className="border-light m-0" />
                 <div className="cd-card-body">
@@ -97,9 +99,10 @@ function ProfileS() {
                   </div>
                 </div>
               </div>
+              </div>
             </div>
-            <div className="text-right mt-3">
-              <button type="button" className="btn-save-ps" onClick={handleSave}>
+            <div className="text-right mt-3" >
+              <button style={{border:'none', backgroundColor:"#ff7900",color:"white"}} type="button" className="btn-save-ps" onClick={handleSave}>
                 Save changes
               </button>
               &nbsp;

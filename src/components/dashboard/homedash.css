@@ -1,6 +1,9 @@
-.main-container {
+.main-containerss {
     position: relative;
     padding: 20px;
+  position: relative;
+  right: 20px;
+  width:800px
   }
   
   
@@ -9,13 +12,15 @@
     margin: auto;
     margin-top: 20px;
     background: white;
+    position: relative;
+    left:90px;
     border-radius: 12px;
     padding: 0;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     overflow: hidden;
   }
   
-  .header-title {
+  .headers-title {
     background-color: #ff7900;
     color: white;
     padding: 20px;

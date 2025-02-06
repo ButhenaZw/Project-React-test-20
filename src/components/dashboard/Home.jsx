@@ -157,38 +157,32 @@ function Home() {
 
   return (
     <main className='mainscontainer'>
-        <div className='mains-title'>
-            <h3>DASHBOARD</h3>
-        </div>
+
 
         <div className='mains-cards'>
             <div className='cardss-dashboard'>
                 <div className='cardss-inner'>
-                    <h3>PRODUCTS</h3>
-                    <BsFillArchiveFill className='card_icon'/>
+                    <h3 style={{fontSize:"22px"}}>Total Teachers</h3>
                 </div>
-                <h1>300</h1>
+                <h1 style={{fontSize:"22px"}}>300</h1>
             </div>
             <div className='cardss-dashboard'>
                 <div className='cardss-inner'>
-                    <h3>CATEGORIES</h3>
-                    <BsFillGrid3X3GapFill className='card_icon'/>
+                    <h3 style={{fontSize:"22px"}}>Total Students</h3>
                 </div>
-                <h1>12</h1>
+                <h1 style={{fontSize:"22px"}}>12</h1>
             </div>
             <div className='cardss-dashboard'>
                 <div className='cardss-inner'>
-                    <h3>CUSTOMERS</h3>
-                    <BsPeopleFill className='card_icon'/>
+                    <h3 style={{fontSize:"22px"}}>Boys</h3>
                 </div>
-                <h1>33</h1>
+                <h1 style={{fontSize:"22px"}}>33</h1>
             </div>
             <div className='cardss-dashboard'>
                 <div className='card-inner'>
-                    <h3>ALERTS</h3>
-                    <BsFillBellFill className='card_icon'/>
+                    <h3 style={{fontSize:"22px"}}>Girls</h3>
                 </div>
-                <h1>42</h1>
+                <h1 style={{fontSize:"22px"}}>42</h1>
             </div>
         </div>
 
@@ -212,8 +206,8 @@ function Home() {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Bar dataKey="pv" fill="#8884d8" />
-                <Bar dataKey="uv" fill="#82ca9d" />
+                <Bar dataKey="pv" fill="#ff7900" />
+                <Bar dataKey="uv" fill="#black" />
                 </BarChart>
             </ResponsiveContainer>
 
@@ -234,26 +228,21 @@ function Home() {
                 <YAxis />
                 <Tooltip />
                 <Legend />
-                <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-                <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                <Line type="monotone" dataKey="pv" stroke="#ff7900" activeDot={{ r: 8 }} />
+                <Line type="monotone" dataKey="uv" stroke="black" />
                 </LineChart>
             </ResponsiveContainer>
             
 
         </div>
         <div
-      className={`main-container ${
+      className={`main-containerss ${
         editIndex !== null || showAddUserForm ? "overlay-active" : ""
       }`}
     >
       <MDBCard className="custom-card">
         <MDBCardBody>
-          <MDBBtn
-            className="save-btn"
-            onClick={() => setShowAddUserForm(true)}
-          >
-            Add New User
-          </MDBBtn>
+
 
           <MDBTable
             className="custom-table"
@@ -266,7 +255,6 @@ function Home() {
                 <th>Title</th>
                 <th>Status</th>
                 <th>Position</th>
-                <th>Actions</th>
               </tr>
             </MDBTableHead>
             <MDBTableBody>
@@ -295,20 +283,7 @@ function Home() {
                     </MDBBadge>
                   </td>
                   <td>{user.position}</td>
-                  <td>
-                    <MDBBtn
-                      className="edit-btn"
-                      onClick={() => handleEdit(index)}
-                    >
-                      Edit
-                    </MDBBtn>
-                    <MDBBtn
-                      className="delete-btn"
-                      onClick={() => handleDeleteUser(index)}
-                    >
-                      Delete
-                    </MDBBtn>
-                  </td>
+
                 </tr>
               ))}
             </MDBTableBody>
@@ -318,45 +293,7 @@ function Home() {
 
       {showAddUserForm && (
         <div className="edit-overlay">
-          <MDBCard className="edit-card">
-            <MDBCardHeader className="edit-header">Add New Student</MDBCardHeader>
-            <MDBCardBody>
-              <MDBInput
-                label="Name"
-                name="name"
-                value={newUser.name}
-                onChange={handleNewUserChange}
-                className="mb-3"
-              />
-              <MDBInput
-                label="Email"
-                name="email"
-                value={newUser.email}
-                onChange={handleNewUserChange}
-                className="mb-3"
-              />
-              <MDBInput
-                label="Title"
-                name="title"
-                value={newUser.title}
-                onChange={handleNewUserChange}
-                className="mb-3"
-              />
-              <MDBInput
-                label="Department"
-                name="department"
-                value={newUser.department}
-                onChange={handleNewUserChange}
-                className="mb-3"
-              />
-              <MDBBtn className="save-btn" onClick={handleAddUser}>
-                Add User
-              </MDBBtn>
-              <MDBBtn className="cancel-btn" onClick={handleCancel}>
-                Cancel
-              </MDBBtn>
-            </MDBCardBody>
-          </MDBCard>
+
         </div>
       )}
 
@@ -364,42 +301,7 @@ function Home() {
         <div className="edit-overlay">
           <MDBCard className="edit-card">
             <MDBCardHeader className="edit-header">Edit User</MDBCardHeader>
-            <MDBCardBody>
-              <MDBInput
-                label="Name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="mb-3"
-              />
-              <MDBInput
-                label="Email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="mb-3"
-              />
-              <MDBInput
-                label="Title"
-                name="title"
-                value={formData.title}
-                onChange={handleChange}
-                className="mb-3"
-              />
-              <MDBInput
-                label="Department"
-                name="department"
-                value={formData.department}
-                onChange={handleChange}
-                className="mb-3"
-              />
-              <MDBBtn className="save-btn" onClick={handleSave}>
-                Save Changes
-              </MDBBtn>
-              <MDBBtn className="cancel-btn" onClick={handleCancel}>
-                Cancel
-              </MDBBtn>
-            </MDBCardBody>
+           
           </MDBCard>
         </div>
       )}
