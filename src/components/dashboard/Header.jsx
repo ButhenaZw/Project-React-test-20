@@ -1,61 +1,60 @@
-
 import React, { useState, useEffect } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
-import { useTranslation } from "react-i18next";
-import 
- {BsFillBellFill, BsFillEnvelopeFill, BsPersonCircle, BsSearch, BsJustify}
- from 'react-icons/bs'
+import { BsSearch, BsJustify } from "react-icons/bs";
 
-const Hero = () => {
-  const { t, i18n } = useTranslation();
-  const [selectedLanguage, setSelectedLanguage] = useState("en");
-  const [profileImage, setProfileImage] = useState("https://bootdey.com/img/Content/avatar/avatar1.png");
-  const navigate = useNavigate();
+function Header({ OpenSidebar }) {
+  const [profileImage, setProfileImage] = useState("https://i.imgur.com/A25nYQ0.jpeg");
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const storedProfile = JSON.parse(localStorage.getItem("studentProfile"));
-    if (storedProfile && storedProfile.profileImage) {
-      setProfileImage(storedProfile.profileImage);
-    }
-  }, []);}
+    const updateProfileImage = () => {
+      const storedProfile = JSON.parse(localStorage.getItem("studentProfile"));
+      if (storedProfile && storedProfile.profile) {
+        setProfileImage(storedProfile.profile);
+      }
+    };
 
-function Header({OpenSidebar}) {
+    updateProfileImage();
+
+    const interval = setInterval(updateProfileImage, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
-    <header className='header-dash'>
-        <div className='menu-icons'>
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+    <header className="header-dash">
+      <div className="menu-icons">
+        <BsJustify className="icon-dashboard" onClick={OpenSidebar} />
+      </div>
+      <div className="header-left">
+        <BsSearch className="icon-dashboard" />
+      </div>
+      <div className="header-right">
+        <div className="profile-dropdown-container">
+          <Link to="/profileT">
+            <img
+              src={profileImage}
+              alt="Profile"
+              className="profile-imagess"
+            />
+          </Link>
 
-
-
-            </div>
-
-            <BsJustify className='icon-dashboard' onClick={OpenSidebar}/>
-        </div>
-        <div className='header-left'>
-            <BsSearch  className='icon-dashboard'/>
-        </div>
-        <div className='header-right'>
-          
-        <div className="dropdown">
-              <button className="dropbtn">
-                <ArrowDropDownIcon />
-                <i className="fa fa-caret-down"></i>
-              </button>
+          <div className="dropdown">
+            <button className="dropbtn" onClick={() => setOpen(!open)}>
+              <ArrowDropDownIcon />
+            </button>
+            {open && (
               <div className="dropdown-content">
-                <Link to="/profileT" className="link-dropdown">
-                  <a>My Profile</a>
-                </Link>
-                <Link to="/login">
-                  <a>Logout</a>
-                </Link>
+                <Link to="/profileT" className="link-dropdown">My Profile</Link>
+                <Link to="/login" className="link-dropdown">Logout</Link>
               </div>
-            </div>
-
+            )}
+          </div>
         </div>
-
+      </div>
     </header>
-  )
+  );
 }
 
-export default Header
+export default Header;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import Header from './Header';
-import Sidebar from './Sidebar';
-import Prof from '../student/pro';
+import Header from '../Header';
+import Sidebar from '../Sidebar';
+import Form from './sform';
 import { positions } from '@mui/system';
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
     <div className='grid-container'>
       <Header OpenSidebar={OpenSidebar}/>
       <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-      <Prof />
+      <Form />
     </div>
   )
 }

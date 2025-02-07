@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./profile.css";
+import { Link } from "react-router-dom";
+
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function ProfileS() {
@@ -13,7 +15,7 @@ function ProfileS() {
     firstName: "",
     lastName: "",
     phoneNumber: "",
-    profileImage: "https://bootdey.com/img/Content/avatar/avatar1.png", // Default image
+    profileImage: "https://bootdey.com/img/Content/avatar/avatar1.png", 
   });
 
   useEffect(() => {
@@ -106,9 +108,9 @@ function ProfileS() {
                 Save changes
               </button>
               &nbsp;
-              <button type="button" className="btn-cancel-ps">
+              <Link to='/home'><button type="button" className="btn-cancel-ps">
                 Cancel
-              </button>
+              </button></Link>
             </div>
           </div>
         </div>

@@ -3,7 +3,7 @@ import { MDBCol, MDBContainer, MDBRow, MDBCard, MDBCardBody, MDBCardImage, MDBTy
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 import './pro.css';
 
 export default function PersonalProfile() {
@@ -12,14 +12,17 @@ export default function PersonalProfile() {
     lastName: '',
     email: '',
     phone: '',
-    profile: 'https://i.imgur.com/A25nYQ0.jpeg',
+    profile: 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2Forange-default-pfp--770748923740491823%2F&psig=AOvVaw0Mkkp9Vdo-NnxOO1kw_Kin&ust=1739006830494000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOCUvLWfsYsDFQAAAAAdAAAAABAE',
   });
   const navigate = useNavigate();
 
   useEffect(() => {
-    const savedProfile = JSON.parse(localStorage.getItem('studentProfile'));
+    // Load profile from localStorage when component mounts
+    const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
     if (savedProfile) {
-      setProfile(savedProfile);
+      setProfile(savedProfile);  // Ensure the profile image and other data are set correctly
+    } else {
+      console.log("Profile not found. Using default.");
     }
   }, []);
 
@@ -32,27 +35,31 @@ export default function PersonalProfile() {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setProfile((prevProfile) => {
-          const updatedProfile = { ...prevProfile, profile: reader.result };
-          localStorage.setItem("studentProfile", JSON.stringify(updatedProfile)); // Update profile image in localStorage
-          return updatedProfile;
-        });
+        const updatedProfile = { ...profile, profile: reader.result };  // Update the profile image
+        setProfile(updatedProfile);  // Update state with new image
+        localStorage.setItem("userProfile", JSON.stringify(updatedProfile));  // Save updated profile in localStorage
+
+        window.dispatchEvent(new Event("storage"));
       };
-      reader.readAsDataURL(file);
+      reader.readAsDataURL(file);  // Convert image file to base64
     }
   };
 
   const handleSave = () => {
-    localStorage.setItem("studentProfile", JSON.stringify(profile));
+    localStorage.setItem("userProfile", JSON.stringify(profile));  // Save profile with updated image to localStorage
     toast.success("Profile updated successfully!", { autoClose: 1500 });
 
     setTimeout(() => {
-      navigate("/dash");
+      if (profile.role === 'teacher') {
+        navigate("/dash"); // Navigate to dashboard for teacher
+      } else {
+        navigate("/home"); // Navigate to home for student
+      }
     }, 2000);
   };
 
   const handleCancel = () => {
-    const savedProfile = JSON.parse(localStorage.getItem('studentProfile'));
+    const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
     if (savedProfile) {
       setProfile(savedProfile);
     }
@@ -69,7 +76,7 @@ export default function PersonalProfile() {
                 <MDBCol md="4" className="gradient-custom text-center text-white"
                   style={{ borderTopLeftRadius: '.5rem', borderBottomLeftRadius: '.5rem' }}>
                   <MDBCardImage 
-                    src={profile.profile}
+                    src={profile.profile} 
                     alt="Avatar" 
                     className="my-5" 
                     style={{ width: '80px', cursor: 'pointer', borderRadius: '50%' }} 
@@ -111,8 +118,10 @@ export default function PersonalProfile() {
                     </MDBRow>
 
                     <div className="d-flex justify-content-start">
-                      <button style={{border:'none', backgroundColor:"#ff7900",color:"white", padding:"6px 12px", borderRadius:"5px"}} onClick={handleSave}>Save</button>
-                      <button style={{border:'none', backgroundColor:"#ff7900",color:"white", padding:"6px 12px", borderRadius:"5px"}} onClick={handleCancel} className="ms-2">Cancel</button>
+                      <button style={{ border: 'none', backgroundColor: "#ff7900", color: "white", padding: "6px 12px", borderRadius: "5px" }} onClick={handleSave}>Save</button>
+                      <Link to='/dash'>
+                        <button style={{ border: 'none', backgroundColor: "#ff7900", color: "white", padding: "6px 12px", borderRadius: "5px" }} onClick={handleCancel} className="ms-2">Cancel</button>
+                      </Link>
                     </div>
 
                   </MDBCardBody>

@@ -12,13 +12,13 @@ const Login = () => {
   const [error, setError] = useState("");
 
   const students = [
-    { email: "buthenaabdullah@gmail.com", password: "123456", firstName: "Buthena", lastName: "Abdullah",phoneNumber:"+962779480559" },
-    { email: "sherinramadan@gmail.com", password: "123456", firstName: "Shiren", lastName: "Ramadan",phoneNumber:"+962777863772" }
+    { email: "buthenaabdullah@gmail.com", password: "123456", firstName: "Buthena", lastName: "Abdullah", phoneNumber: "+962779480559" },
+    { email: "sherinramadan@gmail.com", password: "123456", firstName: "Shiren", lastName: "Ramadan", phoneNumber: "+962777863772" }
   ];
 
   const teachers = [
-    { email: "amroalwageei@gmail.com", password: "admin123" },
-    { email: "leenhammouri@gmail.com", password: "admin123" }
+    { email: "amroalwageei@gmail.com", password: "admin123", firstName: "Amro", lastName: "Al-Wageei", phoneNumber: "+962755454344", image: "https://i.imgur.com/iaAtw6U.jpeg" },
+    { email: "leenhammouri@gmail.com", password: "admin123", firstName: "Leen", lastName: "Hammouri", phoneNumber: "+962754565344", image: "https://imgur.com/a/ubINelx" }
   ];
 
   const handleLogin = (e) => {
@@ -27,14 +27,14 @@ const Login = () => {
 
     const student = students.find(user => user.email === email && user.password === password);
     if (student) {
-      localStorage.setItem("studentProfile", JSON.stringify({
+      localStorage.setItem("userProfile", JSON.stringify({
+        role: 'student',
         email: student.email,
         firstName: student.firstName,
         lastName: student.lastName,
-        phoneNumber: student.phoneNumber, 
-        profileImage: "https://bootdey.com/img/Content/avatar/avatar1.png" // Default profile image
+        phoneNumber: student.phoneNumber,
+        profileImage: "https://bootdey.com/img/Content/avatar/avatar1.png"
       }));
-
       toast.success("Login successful! Redirecting...", { autoClose: 1500 });
       setTimeout(() => {
         navigate("/home");
@@ -42,9 +42,16 @@ const Login = () => {
       return;
     }
 
-    // Check if the user is a teacher
     const teacher = teachers.find(user => user.email === email && user.password === password);
     if (teacher) {
+      localStorage.setItem("userProfile", JSON.stringify({
+        role: 'teacher',
+        email: teacher.email,
+        firstName: teacher.firstName,
+        lastName: teacher.lastName,
+        phoneNumber: teacher.phoneNumber,
+        profileImage: teacher.image
+      }));
       toast.success("Login successful! Redirecting...", { autoClose: 1500 });
       setTimeout(() => {
         navigate("/dash");
@@ -52,25 +59,24 @@ const Login = () => {
       return;
     }
 
-    // If credentials are incorrect
     setError("Invalid email or password!");
     toast.error("Invalid email or password!");
   };
 
   return (
     <div className='bodyl'>
-      <motion.div 
+      <motion.div
         className="cardl"
-        initial={{ opacity: 0, y: 50 }} 
-        animate={{ opacity: 1, y: 0 }} 
-        transition={{ duration: 0.5 }} 
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
       >
-        <div className="card-image"></div> 
+        <div className="card-image"></div>
 
         <form className="forma" onSubmit={handleLogin}>
           <h1 style={{ marginBottom: '20px' }}>Login</h1>
-          
-          <input 
+
+          <input
             className='inputa'
             placeholder='Email'
             type="email"
@@ -78,8 +84,8 @@ const Login = () => {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-          
-          <input 
+
+          <input
             className='inputa'
             type="password"
             placeholder='Password'
@@ -87,7 +93,7 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             required
           />
-          
+
           {error && <span className="text-red-500">{error}</span>}
 
           <button className="submit-btn">Submit</button>
@@ -105,7 +111,7 @@ const Login = () => {
           </Link>
         </form>
       </motion.div>
-      
+
       <ToastContainer
         position="top-center"
         autoClose={5000}

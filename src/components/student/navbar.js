@@ -8,6 +8,7 @@ const Hero = () => {
   const [selectedLanguage, setSelectedLanguage] = useState("en");
   const [profileImage, setProfileImage] = useState("https://bootdey.com/img/Content/avatar/avatar1.png");
   const navigate = useNavigate();
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     const storedProfile = JSON.parse(localStorage.getItem("studentProfile"));
@@ -96,21 +97,18 @@ const Hero = () => {
               onClick={() => navigate("/profile")}
             />
 
-            <div className="dropdown">
-              <button className="dropbtn">
-                <ArrowDropDownIcon />
-                <i className="fa fa-caret-down"></i>
-              </button>
+            
+<div className="dropdown">
+            <button className="dropbtn" onClick={() => setOpen(!open)}>
+              <ArrowDropDownIcon />
+            </button>
+            {open && (
               <div className="dropdown-content">
-                <Link to="/profile" className="link-dropdown">
-                  <a>My Profile</a>
-                </Link>
-                <Link to="/login">
-                  <a>Logout</a>
-                </Link>
+                <Link to="/profile" className="link-dropdown">My Profile</Link>
+                <Link to="/login" className="link-dropdown">Logout</Link>
               </div>
-            </div>
-
+            )}
+          </div>
             <select
               value={selectedLanguage}
               onChange={(e) => changeLanguage(e.target.value)}

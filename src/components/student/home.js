@@ -7,6 +7,7 @@ import Services from '../ProjectReacta/services/services'
 import Activity from '../ProjectReacta/ac/Activty'
 import { useTranslation } from "react-i18next";
 import Footer from '../contactus/Home/footer/footer'
+import Our from './ourstudent'
 
 export const Button = ({ children, className, ...props }) => (
   <button className={`px-4 py-2 rounded-lg text-white font-bold ${className}`} {...props}>
@@ -60,7 +61,10 @@ const Homepage = () => {
       </div>
       <Activity/>
       <Services/>
+
       <Footer/>
+      <Our/>
+
     </div>
   );
 };

@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom"; 
 import React from 'react'
+import AddBoxIcon from '@mui/icons-material/AddBox';
+
+import EditNoteIcon from '@mui/icons-material/EditNote';
 import 
 {BsCart3, BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, 
   BsListCheck, BsMenuButtonWideFill, BsFillGearFill}
@@ -17,16 +20,19 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
         </div>
 
         <ul className='sidebar-list'>
-            <li className='sidebar-list-item'>
-                <a href="">
-                    <BsMenuButtonWideFill className='icons-dashboard'/> Add Student
-                </a>
+       <li className='sidebar-list-item'>
+       <Link to="/form">
+                 <AddBoxIcon className='icons-dashboard'/> Add Student
+                
+
+                 </Link>  
             </li>
-            <li className='sidebar-list-item'>
+
+            <Link to="/edit"><li className='sidebar-list-item'>
                 <a href="">
-                    <BsFillGearFill className='icons-dashboard'/> Setting
+                    <EditNoteIcon className='icons-dashboard'/> Edit
                 </a>
-            </li>
+            </li></Link>
         </ul>
     </aside>
   )

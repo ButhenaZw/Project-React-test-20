@@ -13,6 +13,11 @@ import ProfileS from "./components/student/profileS"
 import Footer from './components/contactus/Home/footer/footer'
 import ProfileT from './components/dashboard/profiles'
 import PPro from './components/student/pro'
+import FormS from './components/dashboard/addstudent/home'
+import Edit from './components/dashboard/edit/edit'
+
+
+
 
 
 
@@ -29,6 +34,11 @@ function App() {
         <Route path="/profile" element={<ProfileS />} />
         <Route path="/profileT" element={<ProfileT />} />
         <Route path="/pro" element={<PPro />} />
+        <Route path="/form" element={<FormS />} />
+        <Route path="/edit" element={<Edit />} />
+
+
+
 
 
 

@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import Header from './Header'
-import Sidebar from './Sidebar'
-import Home from './Home'
-import"./dashboard.css"
-import Footer from '../contactus/Home/footer/footer'
+import Header from '../Header'
+import Sidebar from '../Sidebar'
+import Edit from '../edit/editf'
+
+import"../dashboard.css"
 
 
 function App() {
@@ -17,7 +17,8 @@ function App() {
       <div className='grid-container'>
         <Header OpenSidebar={OpenSidebar}/>
         <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-        <Home />
+        <Edit />
+
 
       </div>
     )
