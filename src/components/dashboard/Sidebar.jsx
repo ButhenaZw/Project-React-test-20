@@ -13,7 +13,7 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
     <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive": ""}>
         <div className='sidebar-title'>
             <div className='sidebar-brand'>
-                <h1 style={{color:"white",fontFamily:"initial",fontSize:"30px"}} >Dashboard</h1>
+             <Link to="/dash" style={{textDecoration:"none"}}>  <h1 style={{color:"white",fontFamily:"initial",fontSize:"30px"}} >Dashboard</h1></Link> 
 
             </div>
             <span className='icon close_icon' onClick={OpenSidebar}>X</span>
@@ -28,9 +28,9 @@ function Sidebar({openSidebarToggle, OpenSidebar}) {
                  </Link>  
             </li>
 
-            <Link to="/edit"><li className='sidebar-list-item'>
+            <Link to="/edit"><li className='sidebar-list-item' style={{textDecoration:"none"}}>
                 <a href="">
-                    <EditNoteIcon className='icons-dashboard'/> Edit
+                    <EditNoteIcon className='icons-dashboard' style={{textDecoration:"none"}}/> Edit
                 </a>
             </li></Link>
         </ul>

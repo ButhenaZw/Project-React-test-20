@@ -21,8 +21,8 @@ function Hero() {
         style={{
           width: '100%',
           height: '480px',
-          textAlign: selectedLanguage === 'ar' ? 'right' : 'left', // Align text
-          direction: selectedLanguage === 'ar' ? 'rtl' : 'ltr', // RTL for Arabic
+          textAlign: selectedLanguage === 'ar' ? 'right' : 'left', 
+          direction: selectedLanguage === 'ar' ? 'rtl' : 'ltr', 
         }}
       >
         <h1 className="h222">{t('aboutUsHeader')}</h1>

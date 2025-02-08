@@ -6,20 +6,10 @@ const Activity = () => {
   const { t } = useTranslation();
   const [isDarkMode, setIsDarkMode] = useState(false);
 
-  // Load dark mode preference from localStorage
   useEffect(() => {
     const darkMode = localStorage.getItem("darkMode") === "true";
     setIsDarkMode(darkMode);
   }, []);
-
-  // Toggle dark mode
-  const toggleDarkMode = () => {
-    setIsDarkMode((prevMode) => {
-      const newMode = !prevMode;
-      localStorage.setItem("darkMode", newMode);
-      return newMode;
-    });
-  };
 
   return (
     <div className={`activity-container ${isDarkMode ? "dark" : ""}`}>
@@ -32,7 +22,12 @@ const Activity = () => {
           bottom: "45px",
         }}
       ></div>
-      <h1 className="activity-title">{t("schoolActivities")}</h1>
+      <h1 
+        className="activity-title" 
+        style={{ color: isDarkMode ? 'white' : 'black' }} 
+      >
+        {t("schoolActivities")}
+      </h1>
       <div className="activity-list">
         <a href="https://www.codewars.com/" target="_blank" className="activity-card">
           <img
@@ -61,8 +56,6 @@ const Activity = () => {
           <p>{t("programmingGameDesc")}</p>
         </a>
       </div>
-      
-
     </div>
   );
 };

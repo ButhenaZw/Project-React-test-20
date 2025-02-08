@@ -15,7 +15,7 @@ function Dashboard() {
   return (
     <div>
       <SForm setStudents={setStudents} students={students} />
-      <Activity students={students} /> {/* Ensure students is passed */}
+      <Activity students={students} />
     </div>
   );
 }

@@ -99,7 +99,7 @@ function SForm({ setStudents }) {
     border: 'none',
     borderRadius: '5px',
     cursor: 'pointer',
-    gridColumn: 'span 2', // Make the button span both columns
+    gridColumn: 'span 2',
     marginTop: '20px',
   };
 

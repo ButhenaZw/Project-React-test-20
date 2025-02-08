@@ -1,125 +1,99 @@
-import React from "react";
-import "./style.css"
-
+import React, { useState, useEffect } from "react";
+import "./style.css";
 
 const Teams = () => {
-    return (
-      <>
-        
-        <title>teams</title>
-      
-        <section id="team">
-          <h2>Meet Our Team</h2>
-          <div className="team-container">
-            <div className="team-member">
-              <img src="https://i.imgur.com/UZTYPK9.jpeg" alt="John Doe" className="member-photo" />
-              <h3>Saba Alhrishat</h3>
-              <p className="role">Web Developer</p>
-              <p className="bio">
-              AI coach specializing in Software Engineering, working with robots and passionate about training children.
-              </p>
-              <div className="social-links">
-                <a href="https://linkedin.com" target="_blank">
-                  LinkedIn
-                </a>
-                <a href="https://twitter.com" target="_blank">
-                  Twitter
-                </a>
-              </div>
-            </div>
-            <div className="team-member">
-              <img src="https://i.imgur.com/IvLOkp4.jpeg" alt="John Doe" className="member-photo" />
-              <h3>Shireen Ramadan </h3>
-              <p className="role">Web Developer</p>
-              <p className="bio">
-                John is an experienced developer with a passion for creating beautiful
-                websites.
-              </p>
-              <div className="social-links">
-                <a href="https://linkedin.com" target="_blank">
-                  LinkedIn
-                </a>
-                <a href="https://twitter.com" target="_blank">
-                  Twitter
-                </a>
-              </div>
-            </div>
-            <div className="team-member">
-              <img src="https://i.imgur.com/zoZ09yX.jpeg" alt="John Doe" className="member-photo" />
-              <h3>Buthena Abdullah</h3>
-              <p className="role">Scrum Master</p>
-              <p className="bio">
-                John is an experienced developer with a passion for creating beautiful
-                websites.
-              </p>
-              <div className="social-links">
-                <a href="https://linkedin.com" target="_blank">
-                  LinkedIn
-                </a>
-                <a href="https://twitter.com" target="_blank">
-                  Twitter
-                </a>
-              </div>
-            </div>
-            <div className="team-member">
-              <img src="https://i.imgur.com/ZXqmRmM.jpeg" alt="John Doe" className="member-photo" />
-              <h3>Tamara</h3>
-              <p className="role">Product Owner</p>
-              <p className="bio">
-                John is an experienced developer with a passion for creating beautiful
-                websites.
-              </p>
-              <div className="social-links">
-                <a href="https://linkedin.com" target="_blank">
-                  LinkedIn
-                </a>
-                <a href="https://twitter.com" target="_blank">
-                  Twitter
-                </a>
-              </div>
-            </div>
-            <div className="team-member">
-              <img src="https://i.imgur.com/CthKRkT.jpeg" alt="John Doe" className="member-photo" />
-              <h3>Hamed</h3>
-              <p className="role">Web Developer</p>
-              <p className="bio">
-                John is an experienced developer with a passion for creating beautiful
-                websites.
-              </p>
-              <div className="social-links">
-                <a href="https://linkedin.com" target="_blank">
-                  LinkedIn
-                </a>
-                <a href="https://twitter.com" target="_blank">
-                  Twitter
-                </a>
-              </div>
-            </div>
-            <div className="team-member">
-              <img src="https://i.imgur.com/uHSUebS.jpeg" alt="John Doe" className="member-photo" />
-              <h3>Omar</h3>
-              <p className="role">Web Developer</p>
-              <p className="bio">
-                John is an experienced developer with a passion for creating beautiful
-                websites.
-              </p>
-              <div className="social-links">
-                <a href="https://linkedin.com" target="_blank">
-                  LinkedIn
-                </a>
-                <a href="https://twitter.com" target="_blank">
-                  Twitter
-                </a>
-              </div>
-            </div>
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-          </div>
-        </section>
-      </>
-    );
+  useEffect(() => {
+    const savedDarkMode = localStorage.getItem("darkMode") === "true";
+    setIsDarkMode(savedDarkMode);
+  }, []);
+
+  const toggleDarkMode = () => {
+    setIsDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      localStorage.setItem("darkMode", newMode);
+      return newMode;
+    });
   };
-  
-  export default Teams;
-  
 
+  return (
+    <>
+      <title>teams</title>
+      <section
+        id="team"
+        style={{
+          backgroundColor: isDarkMode ? "#1a1a1a" : "white", 
+          color: isDarkMode ? "white" : "black",
+        }}
+      >
+        <h2 style={{ color: isDarkMode ? "white" : "black" }}>Meet Our Team</h2>
+        <div className="team-container">
+          {[
+            {
+              name: "Saba Alhrishat",
+              role: "Web Developer",
+              bio:
+                "AI coach specializing in Software Engineering, working with robots and passionate about training children.",
+              img: "https://i.imgur.com/UZTYPK9.jpeg",
+            },
+            {
+              name: "Shireen Ramadan",
+              role: "Web Developer",
+              bio: "Experienced developer with a passion for creating beautiful websites.",
+              img: "https://i.imgur.com/IvLOkp4.jpeg",
+            },
+            {
+              name: "Buthena Abdullah",
+              role: "Scrum Master",
+              bio: "Experienced scrum master with a passion for agile methodologies.",
+              img: "https://i.imgur.com/zoZ09yX.jpeg",
+            },
+            {
+              name: "Tamara",
+              role: "Product Owner",
+              bio: "Expert in product development and management.",
+              img: "https://i.imgur.com/ZXqmRmM.jpeg",
+            },
+            {
+              name: "Hamed",
+              role: "Web Developer",
+              bio: "Experienced developer with a passion for front-end development.",
+              img: "https://i.imgur.com/CthKRkT.jpeg",
+            },
+            {
+              name: "Omar",
+              role: "Web Developer",
+              bio: "Passionate about full-stack development.",
+              img: "https://i.imgur.com/uHSUebS.jpeg",
+            },
+          ].map((member, index) => (
+            <div key={index} className="team-member">
+              <img
+                src={member.img}
+                alt={member.name}
+                className="member-photo"
+                style={{ border: isDarkMode ? "2px solid white" : "2px solid #ddd" }}
+              />
+              <h3>{member.name}</h3>
+              <p className="role">{member.role}</p>
+              <p className="bio">{member.bio}</p>
+              <div className="social-links">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+                  LinkedIn
+                </a>
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
+                  Twitter
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
 
+     
+    </>
+  );
+};
+
+export default Teams;

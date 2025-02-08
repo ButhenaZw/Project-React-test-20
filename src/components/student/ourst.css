@@ -2,6 +2,8 @@
   text-align: center;
   padding: 20px;
   overflow: hidden;
+  position: relative;
+  bottom: 280px;
 }
 
 .scroll-wrapper {
@@ -36,7 +38,6 @@
   border-radius: 50%;
 }
 
-/* Smooth scrolling animation */
 @keyframes scroll-left {
   from {
     transform: translateX(0);

@@ -45,18 +45,7 @@ const Homepage = () => {
           </div>
         </section>
 
-        <motion.section 
-          className="image-section" 
-          initial={{ opacity: 0, y: 50 }} 
-          animate={{ opacity: 1, y: 0 }} 
-          transition={{ duration: 0.5 }}
-        >
-          <Card className={darkMode.value ? 'dark-card' : ''}>
-            <CardContent>
-              {/* Add Content Here */}
-            </CardContent>
-          </Card>
-        </motion.section>
+
       </div>
     </div>
   );

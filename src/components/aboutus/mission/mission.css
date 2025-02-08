@@ -60,7 +60,7 @@
 }
 
 .unique-values {
-  background-color: var(--color4); /* لون الدائرة الرابعة */
+  background-color: var(--color4);
   transform: translate(-50%, -50%) rotate(270deg) translateX(150px) rotate(-270deg); /* زيادة المسافة */
 }
 

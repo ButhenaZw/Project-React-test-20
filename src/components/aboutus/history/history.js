@@ -8,7 +8,6 @@ const AnimatedImage = () => {
 
   return (
     <>
-      {/* Header */}
       <div style={{ display: "flex", marginTop: "150px", justifyContent: "space-between" }}>
         <div
           style={{
@@ -55,7 +54,6 @@ const AnimatedImage = () => {
           <p>{t("lookingAheadText")}</p><br/>
         </div>
 
-        {/* Animated Image Section */}
         <div style={{ position: "relative", top: "160px" }} className="relative w-[300px] h-[200px] overflow-hidden">
           <motion.img
             src="https://i.imgur.com/A6OWOcJ.png"
@@ -122,7 +120,7 @@ const AnimatedImage = () => {
             src="https://i.imgur.com/SeX9qO6.png"
             alt="Background"
             className="absolute top-0 left-0 w-full h-full object-cover rounded-lg"
-            style={{ zIndex: 1, width: "300px" }} // Static image stays on top
+            style={{ zIndex: 1, width: "300px" }} 
           />
         </div>
       </div>

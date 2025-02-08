@@ -1,4 +1,3 @@
-/* Default Light Mode */
 .bodya {
   margin: 0;
   background-color: #ffffff;
@@ -7,14 +6,13 @@
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Dark Mode */
 .dark-mode {
   background-color: #1a1a1a;
   color: white;
 }
 
 .dark-mode .hero-section {
-  background-color: #222; /* Change hero section background in dark mode */
+  background-color: #222; 
 }
 
 .dark-mode .hero-title,
@@ -30,7 +28,6 @@
   background-color: #ffb347;
 }
 
-/* Make sure hero images adapt */
 .hero-section {
   width: 100%;
   min-height: 80vh;
@@ -40,11 +37,10 @@
   align-items: center;
   text-align: center;
   padding: 40px 20px;
-  background-color: white; /* Default light mode background */
+  background-color: white;
   transition: background-color 0.3s ease-in-out;
 }
 
-/* Ensure it updates in dark mode */
 .dark-mode .hero-section {
-  background-color: #1a1a1a !important; /* Forces dark background */
+  background-color: #1a1a1a !important; 
 }

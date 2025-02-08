@@ -10,7 +10,6 @@ const Hero = () => {
   const [selectedLanguage, setSelectedLanguage] = useState('en');
   const darkMode = useDarkMode(false);
 
-  // Update the body's class for dark mode with the new class name 'dark-mode'
   React.useEffect(() => {
     if (darkMode.value) {
       document.body.classList.add('dark-mode');

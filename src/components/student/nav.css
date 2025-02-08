@@ -69,3 +69,17 @@
   opacity: 1;
   visibility: visible;
 }
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.navbar-dark {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.navbar-light {
+  background-color: white;
+  color: black;
+}

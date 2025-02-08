@@ -95,26 +95,21 @@
 .dark-mode-toggle:hover {
   background-color: #e27e03;
 }
-/* In your global CSS (e.g., index.css or App.css) */
-body {
-  background-color: #ffffff;
-  color: #000000;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
 body.dark-mode {
-  background-color: #333333;
-  color: #ffffff;
+  background-color: #1a1a1a;
+  color: white;
 }
 
-/* You can also target specific components if needed */
-.activity-container.dark-mode {
-  background-color: #333333;
-  color: #ffffff;
+.activity-container.dark {
+  background-color: #1a1a1a ;
 }
 
-.activity-title.dark-mode {
-  color: #ffffff;
+.activity-title.dark {
+  color: white;
 }
 
-/* Update other component styles similarly */
+.activity-card.dark {
+  background-color: #444444;
+  color: white;
+}
+

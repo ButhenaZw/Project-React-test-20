@@ -17,10 +17,9 @@ export default function PersonalProfile() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    // Load profile from localStorage when component mounts
     const savedProfile = JSON.parse(localStorage.getItem('userProfile'));
     if (savedProfile) {
-      setProfile(savedProfile);  // Ensure the profile image and other data are set correctly
+      setProfile(savedProfile);
     } else {
       console.log("Profile not found. Using default.");
     }
@@ -35,25 +34,25 @@ export default function PersonalProfile() {
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        const updatedProfile = { ...profile, profile: reader.result };  // Update the profile image
-        setProfile(updatedProfile);  // Update state with new image
-        localStorage.setItem("userProfile", JSON.stringify(updatedProfile));  // Save updated profile in localStorage
+        const updatedProfile = { ...profile, profile: reader.result }; 
+        setProfile(updatedProfile);  
+        localStorage.setItem("userProfile", JSON.stringify(updatedProfile)); 
 
         window.dispatchEvent(new Event("storage"));
       };
-      reader.readAsDataURL(file);  // Convert image file to base64
+      reader.readAsDataURL(file);
     }
   };
 
   const handleSave = () => {
-    localStorage.setItem("userProfile", JSON.stringify(profile));  // Save profile with updated image to localStorage
+    localStorage.setItem("userProfile", JSON.stringify(profile));  
     toast.success("Profile updated successfully!", { autoClose: 1500 });
 
     setTimeout(() => {
       if (profile.role === 'teacher') {
-        navigate("/dash"); // Navigate to dashboard for teacher
+        navigate("/dash");
       } else {
-        navigate("/home"); // Navigate to home for student
+        navigate("/home");
       }
     }, 2000);
   };
