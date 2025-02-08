@@ -61,8 +61,9 @@ const Homepage = () => {
       </div>
       <Activity/>
       <Services/>
-
+<div style={{position:"relative",top:"900px"}}>
       <Footer/>
+      </div>
       <Our/>
 
     </div>

@@ -2,6 +2,12 @@
   text-align: center;
   padding: 50px 20px;
   background-color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.activity-container.dark {
+  background-color: #333333;
+  color: #ffffff;
 }
 
 .activity-title {
@@ -9,6 +15,10 @@
   font-weight: bold;
   color: #000000;
   margin-bottom: 40px;
+}
+
+.activity-title.dark {
+  color: #ffffff;
 }
 
 .activity-list {
@@ -56,6 +66,55 @@
 .activity-card p {
   color: #000000;
   font-size: 13px;
-  
   line-height: 1.4;
 }
+
+.activity-container.dark .activity-card {
+  background: #444444;
+  border-color: #ff7900;
+}
+
+.activity-container.dark .activity-card h3 {
+  color: #f8a800;
+}
+
+.activity-container.dark .activity-card p {
+  color: #ffffff;
+}
+
+.dark-mode-toggle {
+  margin-top: 30px;
+  padding: 10px 20px;
+  background-color: #ff7900;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.dark-mode-toggle:hover {
+  background-color: #e27e03;
+}
+/* In your global CSS (e.g., index.css or App.css) */
+body {
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* You can also target specific components if needed */
+.activity-container.dark-mode {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.activity-title.dark-mode {
+  color: #ffffff;
+}
+
+/* Update other component styles similarly */

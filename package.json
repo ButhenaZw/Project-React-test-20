@@ -29,6 +29,7 @@
     "react-toastify": "^11.0.3",
     "react-window": "^1.8.11",
     "recharts": "^2.15.1",
+    "use-dark-mode": "^2.3.1",
     "web-vitals": "^4.2.4",
     "yup": "^1.6.1"
   },

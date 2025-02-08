@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom"; 
 import { motion } from "framer-motion";
+import useDarkMode from "use-dark-mode"; 
 import "./Contact.css";
 import Navbar from "../nav/nav";
 import { useTranslation } from "react-i18next";
@@ -19,30 +20,28 @@ export const CardContent = ({ children }) => <div>{children}</div>;
 
 const Homepage = () => {
   const { t, i18n } = useTranslation();
+  const darkMode = useDarkMode(false);
 
   return (
-    <div className="bodya">
-    <Navbar style={{width:"100%"}} />
+    <div className={`bodya ${darkMode.value ? 'dark-mode' : ''}`}>
+      <Navbar />
       <div className="homepage">
-  
         <div style={{ backgroundColor: "#ff7900", height: "2px", width: "100%" }}></div>
 
         <section className="hero-section">
           <div>
             <img
               style={{ width: "450px", position: "relative", bottom: "0px" }}
-              src="https://i.imgur.com/bayzpkS.jpeg"
+              src="https://i.imgur.com/XtkVPDw.png"
               alt="Hero"
             />
           </div>
           <div>
-
             <h1 className="hero-title">{t("heroTitle")}</h1>
             <h4 className="hero-text">{t("heroText")}</h4>
             <Link to="/signup">
               <Button className="cta-button">{t("getStarted")}</Button>
             </Link>
-
           </div>
         </section>
 
@@ -52,8 +51,9 @@ const Homepage = () => {
           animate={{ opacity: 1, y: 0 }} 
           transition={{ duration: 0.5 }}
         >
-          <Card>
+          <Card className={darkMode.value ? 'dark-card' : ''}>
             <CardContent>
+              {/* Add Content Here */}
             </CardContent>
           </Card>
         </motion.section>

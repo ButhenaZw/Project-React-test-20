@@ -58,8 +58,11 @@ function homec() {
         </div>
       </div>
 <div>
+<div  style={{position:"relative",top:"300px"}}>
 
 <Footer/>
+
+</div>
 </div>
 
 

@@ -26,7 +26,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/login" element={<Signup />} />
-        <Route path="/" element={<><Hero id="home"/><Activity id="activity"/><Services/><Team/><Footer/>  </>} />
+        <Route path="/" element={<><Hero id="home"/><Activity id="activity"/><Services/><Team/><div style={{position:"relative",top:"300px"}}><Footer/></div>  </>} />
         <Route path="/aboutus" element={<AboutUs />} />
         <Route path="/contactus" element={<Contactus />} />
         <Route path="/dash" element={<Dashboards />} />

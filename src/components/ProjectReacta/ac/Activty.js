@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Activity.css";
 import { useTranslation } from "react-i18next";
 
 const Activity = () => {
   const { t } = useTranslation();
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
+  // Load dark mode preference from localStorage
+  useEffect(() => {
+    const darkMode = localStorage.getItem("darkMode") === "true";
+    setIsDarkMode(darkMode);
+  }, []);
+
+  // Toggle dark mode
+  const toggleDarkMode = () => {
+    setIsDarkMode((prevMode) => {
+      const newMode = !prevMode;
+      localStorage.setItem("darkMode", newMode);
+      return newMode;
+    });
+  };
 
   return (
-    <div className="activity-container">
+    <div className={`activity-container ${isDarkMode ? "dark" : ""}`}>
       <div
         style={{
           width: "100%",
@@ -45,6 +61,8 @@ const Activity = () => {
           <p>{t("programmingGameDesc")}</p>
         </a>
       </div>
+      
+
     </div>
   );
 };
